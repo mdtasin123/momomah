@@ -1326,7 +1326,7 @@ def ffb6(ids,names,passlist):
 	
 def menu_apikey():
   uuid = str(os.geteuid()) + str(os.getlogin())
-  id = "_".join(uuid)
+  id = "__g___".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
   
  
@@ -1357,7 +1357,7 @@ def menu_apikey():
   print("\033[1;37m ╚═══════════════════════════════════════════════╝ ")
   print("")
   print("\033[1;37m--------------------------------------------------")
-  print("\033[1;37m-------> CONTACT ADMIN To BUY This TOOLS <--------   ");time.sleep (0.1) 
+  print("\033[1;37m-------> CONTACT ADMIN TO BUY THIS TOOLS <--------   ");time.sleep (0.1) 
   print("\033[1;37m--------------------------------------------------")
   print("")
   print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");time.sleep(1)
@@ -1381,7 +1381,7 @@ def menu_apikey():
       sys.exit()
   except:
     sys.exit()
-    if name == '__main______':
+    if name == '__main__':
     	print(logo)
     	menu_apikey()
 menu_apikey() 
@@ -1390,7 +1390,7 @@ menu_apikey()
 
 def tnx():
   uuid = str(os.geteuid()) + str(os.getlogin())
-  id = "________".join(uuid)
+  id = "_".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
   
  
@@ -1415,7 +1415,7 @@ def tnx():
       sys.exit()
   except:
     sys.exit()
-    if name == '__main______': 
+    if name == '__main__': 
     	print(logo)
     	menu_apikey()
 try:
@@ -1438,3 +1438,4 @@ if __name__=='__main__':
     except:pass
     #approval()
     menu()
+    
