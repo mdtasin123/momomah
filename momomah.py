@@ -1379,7 +1379,7 @@ def menu_apikey():
       
       
       os.system('xdg-open https://www.facebook.com/gsriyad11')
-      time.sleep(2)
+      time.sleep(0)
       sys.exit()
   except:
     sys.exit()
@@ -1405,15 +1405,15 @@ def tnx():
   try:
     httpCaht = requests.get("https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt").text
     if id in httpCaht:
-      print("\033[1;97m   YOUR KEY APROVED ");time.sleep(1)
+      print("\033[1;97m   YOUR KEY APROVED ");time.sleep(0)
       msg = str(os.geteuid()) 
-      time.sleep(0.1)
+      time.sleep(0)
       pass
     else:
       
       
       os.system('xdg-open https://wa.me/+8801836751224')
-      time.sleep(2)
+      time.sleep(0)
       sys.exit()
   except:
     sys.exit()
