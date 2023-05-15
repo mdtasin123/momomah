@@ -1390,7 +1390,7 @@ menu_apikey()
 
 def tnx():
   uuid = str(os.geteuid()) + str(os.getlogin())
-  id = "___".join(uuid)
+  id = "________".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
   
  
@@ -1415,7 +1415,7 @@ def tnx():
       sys.exit()
   except:
     sys.exit()
-    if name == '__main__': 
+    if name == '__main______': 
     	print(logo)
     	menu_apikey()
 try:
