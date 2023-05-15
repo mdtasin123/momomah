@@ -1404,7 +1404,7 @@ def tnx():
     httpCaht = requests.get("https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt").text
     if id in httpCaht:
       print("\033[1;97m   YOUR KEY APROVED ");time.sleep(2)
-      msg = str(os.geteuid()) + str(os.geteuid())
+      msg = str(os.geteuid()) 
       time.sleep(0.5)
       pass
     else:
