@@ -1362,9 +1362,9 @@ def menu_apikey():
   print("\033[1;37m-------> CONTACT ADMIN TO BUY THIS TOOLS <--------   ");
   print("\033[1;37m--------------------------------------------------")
   print("")
-  print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");time.sleep(0.2)
+  print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");
   os.system('xdg-open https://wa.me/+8801836751224')
-  print("");time.sleep(0.2)
+  print("");
   print("\x1b[1;97m  CHECKING YOUR APROVAL....                                             ");
   print("")
   try:
