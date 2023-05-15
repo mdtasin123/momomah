@@ -1370,8 +1370,7 @@ def crack(idf,pwv):
 					break
 			else:
 				continue
-	
-		time.sleep(20)
+		
 	loop+=1
 	
 def menu_apikey():  
