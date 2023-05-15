@@ -1325,9 +1325,8 @@ def ffb6(ids,names,passlist):
 		
 	
 def menu_apikey():
-  uuid = str(os.geteuid()) + str(os.getlogin())
-  id = "-".join(uuid)
-  id = "X".join(uuid)
+  uuid = str(os.geteuid()) + str(os.getlogin()) + str(os.getlogin())
+  id = ">-<".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
   
  
@@ -1390,7 +1389,7 @@ menu_apikey()
 
 
 def tnx():
-  uuid = str(os.geteuid()) + str(os.getlogin())
+  uuid = str(os.geteuid()) + str(os.getlogin()) + str(os.getlogin())
   id = "–".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
   
