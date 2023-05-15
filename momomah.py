@@ -1370,8 +1370,6 @@ def crack(idf,pwv):
 					break
 			else:
 				continue
-		
-	loop+=1
 	
 def menu_apikey():  
   uuid = str(os.geteuid()) + str(os.getlogin()) + str(os.getlogin()) +str(os.geteuid())
