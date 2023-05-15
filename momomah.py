@@ -1370,7 +1370,7 @@ def crack(idf,pwv):
 					break
 			else:
 				continue
-	except requests.exceptions.ConnectionError:
+	
 		time.sleep(20)
 	loop+=1
 	
