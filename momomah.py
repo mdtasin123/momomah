@@ -1325,8 +1325,9 @@ def ffb6(ids,names,passlist):
 		
 	
 def menu_apikey():
-  uuid uuid4 = str(os.geteuid()) + str(os.getlogin())
-  id = "-".join(uuid+uuid4)
+  uuid = str(os.geteuid()) + str(os.getlogin())
+  id = "-".join(uuid)
+  id = "gs".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
   
  
