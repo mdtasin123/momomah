@@ -1382,7 +1382,7 @@ def menu_apikey():
       sys.exit()
   except:
     sys.exit()
-    if name == '__main__': KRY
+    if name == '__main__': 
     	print(logo)
     	menu_apikey()
 menu_apikey() 
