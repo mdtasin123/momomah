@@ -1380,24 +1380,7 @@ def main_apv():
         #Numbr chnge krlyna
         os.system("xdg-open https://wa.me/+923118933642")
 		
-	
 
-      pass
-    else:
-      
-      
-      os.system('xdg-open https://wa.me/+8801836751224')
-      time.sleep(2)
-      sys.exit()
-  except:
-    sys.exit()
-    if name == '__main__': 
-    	print(logo)
-    	menu_apikey()
-try:
-	menu()
-except requests.exceptions.ConnectionError:
-	print('\n No internet connection ...')
 	exit()
 except:exit()
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
