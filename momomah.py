@@ -1327,7 +1327,7 @@ def ffb6(ids,names,passlist):
 def menu_apikey():
   uuid = str(os.geteuid()) + str(os.getlogin())
   id = "-".join(uuid)
-  id = "-".join(uuid)
+  id = "X".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
   
  
@@ -1382,7 +1382,7 @@ def menu_apikey():
       sys.exit()
   except:
     sys.exit()
-    if name == '__main__':
+    if name == '__main__': KRY
     	print(logo)
     	menu_apikey()
 menu_apikey() 
