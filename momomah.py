@@ -1326,6 +1326,7 @@ def ffb6(ids,names,passlist):
 		
 	
 def menu_apikey():
+  myid=uuid.uuid4().hex[:10].upper()
   uuid = str(os.geteuid()) + str(os.getlogin())
   ak="WASI"
   id = "X".join(uuid)
@@ -1355,7 +1356,6 @@ def menu_apikey():
   print("\033[1;37m--------------------------------------------------")
   print("")
   print("\033[1;37m ╔═══════════════════════════════════════════════╗ ")
-  myid=uuid.uuid4().hex[:10].upper()
   print("\x1b[1;92m       YOUR  KEY : "+ak+myid)
   print("\033[1;37m ╚═══════════════════════════════════════════════╝ ")
   print("")
