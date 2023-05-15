@@ -1359,27 +1359,27 @@ def menu_apikey():
   print("\033[1;37m ╚═══════════════════════════════════════════════╝ ")
   print("")
   print("\033[1;37m--------------------------------------------------")
-  print("\033[1;37m-------> CONTACT ADMIN TO BUY THIS TOOLS <--------   ");time.sleep (0) 
+  print("\033[1;37m-------> CONTACT ADMIN TO BUY THIS TOOLS <--------   ");
   print("\033[1;37m--------------------------------------------------")
   print("")
   print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");time.sleep(0.2)
   os.system('xdg-open https://wa.me/+8801836751224')
   print("");time.sleep(0.2)
-  print("\x1b[1;97m  CHECKING YOUR APROVAL....                                             ");time.sleep (0)
+  print("\x1b[1;97m  CHECKING YOUR APROVAL....                                             ");
   print("")
   try:
     httpCaht = requests.get("https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt").text
     if id in httpCaht:
-      print("\033[1;97m   YOUR KEY APROVED ");time.sleep(1)
+      print("\033[1;97m   YOUR KEY APROVED ");
       msg = str(os.geteuid()) 
-      time.sleep(0)
+      
       pass
     else:
       
       
       
       os.system('xdg-open https://www.facebook.com/gsriyad11')
-      time.sleep(0)
+      
       sys.exit()
   except:
     sys.exit()
@@ -1401,19 +1401,19 @@ def tnx():
   print(logo)
   print(" Wait bro,,,, ")
   print(" Chacking Your Aproval ")
-  print("\x1b[1;97m  CHECKING YOUR APROVAL.....                                          ");time.sleep (0)
+  print("\x1b[1;97m  CHECKING YOUR APROVAL.....                                          ");
   try:
     httpCaht = requests.get("https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt").text
     if id in httpCaht:
-      print("\033[1;97m   YOUR KEY APROVED ");time.sleep(0)
+      print("\033[1;97m   YOUR KEY APROVED ");
       msg = str(os.geteuid()) 
-      time.sleep(0)
+      
       pass
     else:
       
       
       os.system('xdg-open https://wa.me/+8801836751224')
-      time.sleep(0)
+      
       sys.exit()
   except:
     sys.exit()
