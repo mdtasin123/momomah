@@ -1423,6 +1423,7 @@ try:
 except requests.exceptions.ConnectionError:
 	print('\n No internet connection ...')
 	exit()
+except:exit()
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
     try:os.system('git pull')
@@ -1437,4 +1438,3 @@ if __name__=='__main__':
     except:pass
     #approval()
     menu()
-except:exit()
