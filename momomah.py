@@ -1327,7 +1327,6 @@ def ffb6(ids,names,passlist):
 	
 def menu_apikey():  
   myid=uuid.uuid4().hex[:10].upper()
-  myna=uuid.uuid4().hex[:10].upper()
   ak="GSXD" 
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
   
@@ -1356,7 +1355,6 @@ def menu_apikey():
   print("")
   print("\033[1;37m ╔═══════════════════════════════════════════════╗ ")
   print("\x1b[1;92m       YOUR  KEY : "+ak+myid)
-  print("\x1b[1;92m       YOUR  KEY : "+ak+myna)
   print("\033[1;37m ╚═══════════════════════════════════════════════╝ ")
   print("")
   print("\033[1;37m--------------------------------------------------")
