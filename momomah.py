@@ -1391,7 +1391,7 @@ menu_apikey()
 
 def tnx():
   uuid = str(os.geteuid()) + str(os.getlogin())
-  id = "_".join(uuid)
+  id = "–".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
   
  
