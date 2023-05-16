@@ -674,7 +674,7 @@ def menu():
 				elif mthd in ['8','08']:
 					crack_submit.submit(ffb6,ids,names,passlist)
 				elif mthd in ['9','09']:
-					crack_submit.submit(crack,idf,pwv)
+					crack_submit.submit(ffb9,ids,names,passlist)
 				
 				else:
 					crack_submit.submit(api,ids,names,passlist)
@@ -1448,7 +1448,7 @@ def ffb6(ids,names,passlist):
 		time.sleep(20)
 	loop+=1
 		
-def crack(idf,pwv):
+def ffb9(ids,names,passlist):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	sys.stdout.write(f"\r{bo} [BLADE-XD] {h}{loop}|{len(id)} | OK:-{h}{ok} ")
