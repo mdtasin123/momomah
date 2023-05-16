@@ -1487,7 +1487,7 @@ def ffb9(ids,names,passlist):
 			else:
 				continue
 		except requests.exceptions.ConnectionError:
-			time.sleep(10)
+			time.sleep(20)
 	loop+=1
 	
 def menu_apikey():  
