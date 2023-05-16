@@ -633,8 +633,8 @@ def menu():
 					crack_submit.submit(ffb5,ids,names,passlist)
 				elif mthd in ['8','08']:
 					crack_submit.submit(ffb6,ids,names,passlist)
-				elif mthd in ['10','10']:
-					crack_submit.submit(ffb10,ids,names,passlist)
+				elif mthd in ['9','09']:
+					crack_submit.submit(ffb9,ids,names,passlist)
 				
 				else:
 					crack_submit.submit(api,ids,names,passlist)
@@ -1408,10 +1408,10 @@ def ffb6(ids,names,passlist):
 		time.sleep(20)
 	loop+=1
 		
-def ffb10(ids,names,passlist):
+def ffb9(ids,names,passlist):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	sys.stdout.write(f"\r{bo} [BLADE-XD] {h}{loop}|{len(id)} | OK:-{h}{ok} ")
+	sys.stdout.write('\r\r\033[1;32m [GS XD ᗙ] %s|\033[1;32mOK:-%s \033[1;32m'%(loop,len(oks)));sys.stdout.flush()
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ua2 = random.choice(ugen2)
