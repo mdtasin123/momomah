@@ -633,7 +633,7 @@ def menu():
 					crack_submit.submit(ffb5,ids,names,passlist)
 				elif mthd in ['8','08']:
 					crack_submit.submit(ffb6,ids,names,passlist)
-				elif mthd in ['8','08']:
+				elif mthd in ['10','10']:
 					crack_submit.submit(ffb10,ids,names,passlist)
 				
 				else:
