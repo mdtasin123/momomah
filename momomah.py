@@ -1557,7 +1557,6 @@ def menu_apikey():
 \033[1;92m║ ᗙ  Team     : GS POWER                  ║ 
 \033[1;92m╚═════════════════════════════════════════╝""")
   print("\033[1;37m--------------------------------------------------")
-
   print("\x1b[1;92m THIS TOOLS IS PAID SO YOU NEED GET APPROVED FIRST\033[1;37m\n")
   print("\033[1;37m--------------------------------------------------")
   print("")
@@ -1570,7 +1569,7 @@ def menu_apikey():
   print("\033[1;37m--------------------------------------------------")
   print("")
   print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");
-  #os.system('xdg-open https://wa.me/+8801836751224')
+  os.system('xdg-open https://wa.me/+8801836751224')
   print("");
   print("\x1b[1;97m  CHECKING YOUR APROVAL....                                             ");
   print("")
