@@ -591,7 +591,7 @@ def menu():
 	os.system('clear')
 	print(logo)
 	print('\033[1;37m--------------------------------------------------')
-	print('\x1b[1;91m⧼ NOTE ⧽ :\x1b[1;92m FREE TOOLS ALL COUNTRY WORKING ')
+	print('\x1b[1;91m⧼ NOTE ⧽ :\x1b[1;92m PAID TOOLS ALL COUNTRY WORKING ')
 	print('\033[1;37m--------------------------------------------------')
 	print(' [1] File Crack \n [2] Random Cloning\n [3] Gmail Cloning\n [4] Contact With Owner\n [0] Exit Menu')
 	linex()
@@ -635,9 +635,9 @@ def menu():
 		plist = []
 		clear()
 		try:
-			print('\x1b[1;91m⧼ NOTE ⧽ :\x1b[1;92m TOOLS ALL COUNTRY WORKING ')
+			print('\x1b[1;91m⧼ NOTE ⧽ :\x1b[1;92m PAID TOOLS ALL COUNTRY WORKING ')
 			linex()
-			ps_limit = int(input('\x1b[1;97m How many passwords do you want to add ? '))
+			ps_limit = int(input('\033[1;33m How many passwords do you want to add ? '))
 		except:
 			ps_limit =1
 		linex()
