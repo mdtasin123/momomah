@@ -1560,7 +1560,6 @@ def menu_apikey():
 
   print("\x1b[1;92m THIS TOOLS IS PAID SO YOU NEED GET APPROVED FIRST\033[1;37m\n")
 clear()
-  try:
   print("\033[1;37m--------------------------------------------------")
   print("")
   print("\033[1;37m ╔═══════════════════════════════════════════════╗ ")
@@ -1636,6 +1635,8 @@ except requests.exceptions.ConnectionError:
 	print('\n No internet connection ...')
 	exit()
 except:exit()
+clear()
+os.system(" clear ")
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
     try:os.system('git pull')
