@@ -1565,12 +1565,13 @@ def menu_apikey():
   print("\x1b[1;92m       YOUR  KEY : "+ak+id)
   print("\033[1;37m ╚═══════════════════════════════════════════════╝ ")
   print("")
+  clear()
   print("\033[1;37m--------------------------------------------------")
   print("\033[1;37m-------> CONTACT ADMIN TO BUY THIS TOOLS <--------   ");
   print("\033[1;37m--------------------------------------------------")
   print("")
   print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");
-  os.system('xdg-open https://wa.me/+8801836751224')
+  #os.system('xdg-open https://wa.me/+8801836751224')
   print("");
   print("\x1b[1;97m  CHECKING YOUR APROVAL....                                             ");
   print("")
