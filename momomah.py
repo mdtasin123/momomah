@@ -633,6 +633,11 @@ def menu():
 		linex()
 		plist = []
 		try:
+		fo = open(mthd,'r').read().splitlines()
+		except Method Not Found Error:
+			print(' Method Not Found Error')
+			time.sleep(1)
+			menu()
 		clear()
 			ps_limit = int(input(' How many passwords do you want to add ? '))
 		except:
