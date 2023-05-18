@@ -633,8 +633,6 @@ def menu():
 		linex()
 		plist = []
 		try:
-		except Method Not Found Error:
-			print(' Method Not Found Error')
 			time.sleep(1)
 			menu()
 		clear()
