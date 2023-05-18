@@ -1598,7 +1598,6 @@ def menu_apikey():
     	menu_apikey()
 menu_apikey() 
 clear()
-  try:
 
 
 def tnx():
