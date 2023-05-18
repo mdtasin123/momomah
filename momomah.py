@@ -1593,6 +1593,7 @@ def tnx():
   uuid = str(os.geteuid())
   id = "–".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt'
+  
   os.system(" clear ")
   print(logo)
   print(" Wait bro,,,, ")
