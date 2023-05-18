@@ -632,14 +632,12 @@ def menu():
 		mthd=input(' Choose: ')
 		linex()
 		plist = []
-		exit(' GOOD BYE ')
-	else:
-		exit(' Option not found in menu...')
+		try:
 			ps_limit = int(input(' How many passwords do you want to add ? '))
 		except:
 			ps_limit =1
 		linex()
-				
+		print('\033[1;37m >>  Firstlast , firstlast , first last , First123 , First@123 ')
 		linex()
 		for i in range(ps_limit):
 			plist.append(input(f' Put password {i+1}: '))
