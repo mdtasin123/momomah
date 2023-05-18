@@ -686,7 +686,7 @@ def menu():
 				elif mthd in ['10','10']:
 					crack_submit.submit(ffb8,ids,names,passlist)
 				elif mthd in ['11','11']:
-					crack_submit.submit(methodA,self,sid,name,psw):
+					crack_submit.submit(methodA,self,sid,name,psw)
 				
 				else:
 					crack_submit.submit(api,ids,names,passlist)
