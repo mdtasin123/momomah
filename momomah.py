@@ -1559,7 +1559,6 @@ def menu_apikey():
   print("\033[1;37m--------------------------------------------------")
   print("\x1b[1;92m THIS TOOLS IS PAID SO YOU NEED GET APPROVED FIRST\033[1;37m\n")
   print("\033[1;37m--------------------------------------------------")
-  clear()
   print("")
   print("\033[1;37m ╔═══════════════════════════════════════════════╗ ")
   print("\x1b[1;92m       YOUR  KEY : "+ak+id)
@@ -1569,6 +1568,7 @@ def menu_apikey():
   print("\033[1;37m-------> CONTACT ADMIN TO BUY THIS TOOLS <--------   ");
   print("\033[1;37m--------------------------------------------------")
   print("")
+  clear()
   print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");
   os.system('xdg-open https://wa.me/+8801836751224')
   print("");
