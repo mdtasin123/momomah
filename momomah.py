@@ -1029,13 +1029,14 @@ def methodA(self,sid,name,psw):
                      #print(f"\r{A} [SSB-CP] {sid} | {ps} {S}")
                      cps.append(sid)
                      open('/sdcard/SSB_CP.txt','a').write(sid+'|'+ps+'\n')
-                else:
-                    continue
-       
+                break
+				else:
+					break
+			else:
+				continue
 	except requests.exceptions.ConnectionError:
 		time.sleep(20)
 	loop+=1
-		
 #----------------- Random Nolmal METHOD  -------------------------------------
 		
 		
