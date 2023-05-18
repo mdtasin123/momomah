@@ -600,6 +600,8 @@ def menu():
 		clear()
 				
 		linex()
+		print('\x1b[1;91m⧼ NOTE ⧽ :\x1b[1;92m [ File Name :- /sdcard/Your_File_Name.txt ]')
+		linex()
 		file = input(' Put file path\033[1;91m: ')
 		try:
 			fo = open(file,'r').read().splitlines()
