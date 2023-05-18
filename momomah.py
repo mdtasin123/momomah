@@ -1030,13 +1030,10 @@ def methodA(self,sid,name,psw):
                      cps.append(sid)
                      open('/sdcard/SSB_CP.txt','a').write(sid+'|'+ps+'\n')
                 else:
-                    continue
-            loop+=1
+				continue
 	except requests.exceptions.ConnectionError:
-		time.sleep(10)
-	except Exception as e:
-		
-		pass
+		time.sleep(20)
+	loop+=1
 		
 #----------------- Random Nolmal METHOD  -------------------------------------
 		
