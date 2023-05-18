@@ -633,9 +633,7 @@ def menu():
 		linex()
 		plist = []
 		try:
-			time.sleep(1)
-			menu()
-		clear()
+			else:
 			ps_limit = int(input(' How many passwords do you want to add ? '))
 		except:
 			ps_limit =1
