@@ -600,7 +600,7 @@ def menu():
 		clear()
 				
 		linex()
-		print('\x1b[1;91m⧼ NOTE ⧽ :\x1b[1;92m [ File Name :- /sdcard/Your_File_Name.txt ]')
+		print('\x1b[1;91m⧼ NOTE ⧽ :\x1b[1;92m {  /sdcard/Your_File_Name.txt }')
 		linex()
 		file = input(' Put file path\033[1;91m: ')
 		try:
@@ -926,12 +926,12 @@ def ffb(ids,names,passlist):
 			ua=random.choice(ugen)
 			head = {'Host': 'p.facebook.com',
  'viewport-width': '980',
- 'sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"',
+ 'sec-ch-ua': '"Chromium";v="111", "Not(A:Brand";v="8"',
  'sec-ch-ua-mobile': '?1',
  'sec-ch-ua-platform': '"Android"',
  'sec-ch-prefers-color-scheme': 'light',
  'dnt': '1', 
- 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+ 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.7',
  'upgrade-insecure-requests': '1', 
  'user-agent': ua, 
  'sec-fetch-site': 'none',
