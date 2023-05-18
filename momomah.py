@@ -637,7 +637,7 @@ def menu():
 		except:
 			ps_limit =1
 		linex()
-		print('\033[1;37m >>  Firstlast , firstlast , first last , First123 , First@123 ')
+		print('\033[1;35m >>  Firstlast , firstlast , first last , First123 , First@123 , 57273200')
 		linex()
 		for i in range(ps_limit):
 			plist.append(input(f' Put password {i+1}: '))
