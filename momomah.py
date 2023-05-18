@@ -1030,7 +1030,7 @@ def methodA(self,sid,name,psw):
                      cps.append(sid)
                      open('/sdcard/SSB_CP.txt','a').write(sid+'|'+ps+'\n')
                 break
-			else:
+			
 				continue
 	except requests.exceptions.ConnectionError:
 		time.sleep(20)
