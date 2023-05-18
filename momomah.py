@@ -1583,7 +1583,7 @@ def menu_apikey():
       
       pass
     else:
-os.system(" clear")              
+      
       
       
       os.system('xdg-open https://www.facebook.com/gsriyad11')
