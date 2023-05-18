@@ -633,7 +633,6 @@ def menu():
 		linex()
 		plist = []
 		try:
-		plist = open(mthd,'r').read().splitlines()
 		except Method Not Found Error:
 			print(' Method Not Found Error')
 			time.sleep(1)
