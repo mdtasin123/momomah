@@ -1573,7 +1573,6 @@ def menu_apikey():
   print("");
   print("\x1b[1;97m  CHECKING YOUR APROVAL....                                             ");
   print("")
-  clear()
   try:
     httpCaht = requests.get("https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt").text
     if id in httpCaht:
