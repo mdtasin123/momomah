@@ -642,7 +642,7 @@ def menu():
 		for i in range(ps_limit):
 			plist.append(input(f' Put password {i+1}: '))
 		linex()
-		print(' Do you went show cp account? ('\033[1;35m'y/n): ')
+		print(' Do you went show cp account? ('y/n): ')
 		linex()
 		cx=input(' Choose: ')
 		if cx in ['y','Y','yes','Yes','1']:
