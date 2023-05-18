@@ -1557,7 +1557,7 @@ def menu_apikey():
 \033[1;92m║ ᗙ  Team     : GS POWER                  ║ 
 \033[1;92m╚═════════════════════════════════════════╝""")
 clear()
-
+  try:
   print("\033[1;37m--------------------------------------------------")
 
   print("\x1b[1;92m THIS TOOLS IS PAID SO YOU NEED GET APPROVED FIRST\033[1;37m\n")
