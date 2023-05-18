@@ -1589,13 +1589,10 @@ def menu_apikey():
     	print(logo)
     	menu_apikey()
 menu_apikey() 
-
-
 def tnx():
   uuid = str(os.geteuid())
   id = "–".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
-  
   os.system(" clear ")
   print(logo)
   print(" Wait bro,,,, ")
@@ -1608,8 +1605,6 @@ def tnx():
       msg = str(os.geteuid()) 
       pass
     else:
-
-
       os.system('xdg-open https://wa.me/+8801836751224')
       sys.exit()
   except:
