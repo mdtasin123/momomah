@@ -1589,6 +1589,8 @@ def menu_apikey():
     	print(logo)
     	menu_apikey()
 menu_apikey() 
+
+
 def tnx():
   uuid = str(os.geteuid())
   id = "–".join(uuid)
@@ -1604,11 +1606,11 @@ def tnx():
     if id in httpCaht:
       print("\033[1;97m   YOUR KEY APROVED ");
       msg = str(os.geteuid()) 
-      
       pass
     else:
+
+
       os.system('xdg-open https://wa.me/+8801836751224')
-      
       sys.exit()
   except:
     sys.exit()
