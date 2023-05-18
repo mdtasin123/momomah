@@ -1579,7 +1579,7 @@ def menu_apikey():
     if id in httpCaht:
       print("\033[1;97m   YOUR KEY APROVED ");
       msg = str(os.geteuid()) 
-      os.system('xdg-open https://wa.me/+8801836751224')
+      #os.system('xdg-open https://wa.me/+8801836751224')
       
       pass
     else:
