@@ -1583,7 +1583,7 @@ def menu_apikey():
       
       pass
     else:
-      
+os.system(" clear")              
       
       
       os.system('xdg-open https://www.facebook.com/gsriyad11')
@@ -1634,8 +1634,6 @@ except requests.exceptions.ConnectionError:
 	print('\n No internet connection ...')
 	exit()
 except:exit()
-
-os.system(" clear")  
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
     try:os.system('git pull')
