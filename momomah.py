@@ -632,7 +632,6 @@ def menu():
 		mthd=input(' Choose: ')
 		linex()
 		plist = []
-		try:
 		exit(' GOOD BYE ')
 	else:
 		exit(' Option not found in menu...')
