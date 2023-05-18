@@ -636,7 +636,7 @@ def menu():
 		clear()
 		try:
 			linex()
-			ps_limit = int(input('\x1b[1;92m How many passwords do you want to add ? '))
+			ps_limit = int(input('\033[1;35m How many passwords do you want to add ? '))
 		except:
 			ps_limit =1
 		linex()
