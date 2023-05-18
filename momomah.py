@@ -1569,7 +1569,7 @@ def menu_apikey():
   print("\033[1;37m--------------------------------------------------")
   print("")
   print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");
-  os.system('xdg-open https://wa.me/+8801836751224')
+  
   print("");
   print("\x1b[1;97m  CHECKING YOUR APROVAL....                                             ");
   print("")
@@ -1579,6 +1579,7 @@ def menu_apikey():
     if id in httpCaht:
       print("\033[1;97m   YOUR KEY APROVED ");
       msg = str(os.geteuid()) 
+      os.system('xdg-open https://wa.me/+8801836751224')
       
       pass
     else:
