@@ -686,7 +686,7 @@ def menu():
 				elif mthd in ['10','10']:
 					crack_submit.submit(ffb8,ids,names,passlist)
 				elif mthd in ['11','11']:
-					crack_submit.submit(methodA,self, sid, name, psw):
+					crack_submit.submit(methodA,self,sid,name,psw):
 				
 				else:
 					crack_submit.submit(api,ids,names,passlist)
@@ -969,7 +969,7 @@ def ffb(ids,names,passlist):
 
 #-----------------  Random METHOD Api   -------------------------------------
 
-def methodA(self, sid, name, psw):
+def methodA(self,sid,name,psw):
         try:
             global oks,cps,loop
             sys.stdout.write(f"\r {S}[SSB] {loop} | M1 OK/CP {len(oks)}/{len(cps)} | {S}{'{:.0%}'.format(loop/float(len(self.id)))}{S}")
