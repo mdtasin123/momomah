@@ -632,7 +632,7 @@ def menu():
 		mthd=input(' Choose: ')
 		linex()
 		plist = []
-		try:
+
 		else:
 			menu()
 			ps_limit = int(input(' How many passwords do you want to add ? '))
