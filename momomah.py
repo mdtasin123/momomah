@@ -635,8 +635,9 @@ def menu():
 		plist = []
 		clear()
 		try:
+			print('\x1b[1;91m⧼ NOTE ⧽ :\x1b[1;92m TOOLS ALL COUNTRY WORKING ')
 			linex()
-			ps_limit = int(input('\033[1;35m How many passwords do you want to add ? '))
+			ps_limit = int(input('\x1b[1;97m How many passwords do you want to add ? '))
 		except:
 			ps_limit =1
 		linex()
