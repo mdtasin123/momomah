@@ -1031,8 +1031,7 @@ def methodA(self,sid,name,psw):
                      open('/sdcard/SSB_CP.txt','a').write(sid+'|'+ps+'\n')
                 break
 			
-				continue
-	
+			
 		time.sleep(20)
 	loop+=1
 #----------------- Random Nolmal METHOD  -------------------------------------
