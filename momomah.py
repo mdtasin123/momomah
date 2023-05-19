@@ -1032,7 +1032,7 @@ def methodA(self,sid,name,psw):
                 break
 			
 				continue
-	except requests.exceptions.ConnectionError:
+	
 		time.sleep(20)
 	loop+=1
 #----------------- Random Nolmal METHOD  -------------------------------------
