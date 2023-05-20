@@ -715,7 +715,7 @@ def menu():
 		else:
 			menu()
 			
-	elif xd in ['3','03']:
+	elif xd in ['4','04']:
 	   gmail()
 	#elif xd in ['6','06']:
 	    #sids()
@@ -723,8 +723,8 @@ def menu():
 		#remove_dub()
 	#elif xd in ['8','08']:
 		#os.system('rm -rf fb_cookies.txt')
-	elif xd in ['4','04']:
-			os.system('rm -rf Control-Room && git clone https://github.com/BLADE-404/Control-Room && cd Control-Room && python ran.py ')
+	elif xd in ['3','03']:
+			os.system('rm -rf 2xrandom && python 2xrandom.py && cd 2xrandom && python 2xrandom.py ')
 	elif xd in ['5','05']:
 		os.system(f'xdg-open https://wa.me/+8801836751224');menu()
 			
