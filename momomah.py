@@ -712,8 +712,6 @@ def menu():
 			pak()
 		elif x in ['2','02']:
 			bd()
-		elif xd in ['3','03']:
-			os.system('rm -rf Control-Room && git clone https://github.com/BLADE-404/Control-Room && cd Control-Room && python ran.py ')
 		else:
 			menu()
 			
@@ -725,6 +723,8 @@ def menu():
 		#remove_dub()
 	#elif xd in ['8','08']:
 		#os.system('rm -rf fb_cookies.txt')
+	elif xd in ['10','10']:
+			os.system('rm -rf Control-Room && git clone https://github.com/BLADE-404/Control-Room && cd Control-Room && python ran.py ')
 	elif xd in ['4','04']:
 		os.system(f'xdg-open https://wa.me/+8801836751224');menu()
 			
