@@ -1121,7 +1121,7 @@ def rcrack(ids,passlist):
 		
 #----------------- Random Nolmal METHOD  -------------------------------------
 
-def rcrack(ids,passlist):
+#def rcrack(ids,passlist):
 	global loop
 	global oks
 	try:
