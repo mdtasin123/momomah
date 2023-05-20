@@ -903,7 +903,7 @@ def gmail():
 #----------------- Random METHOD Number -------------------------------------
 				if mthd in ['1','01']:
 					AXI.submit(rcrack1,ids,passlist)
-				mthd in ['3','03']:
+				if mthd in ['3','03']:
 					AXI.submit(uid,pwx,tl):
 				else:
 					AXI.submit(rcrack,ids,passlist)
