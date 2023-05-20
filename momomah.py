@@ -928,7 +928,7 @@ def ffb(ids,names,passlist):
 			ua=random.choice(ugen)
 			head = {'Host': 'p.facebook.com',
  'viewport-width': '980',
- 'sec-ch-ua': '"Chromium";v="111.0.5563.104", "Not(A:Brand";v="8.0.0.0"
+ 'sec-ch-ua': '"Chromium";v="111.0.5563.104", "Not(A:Brand";v="8.0.0.0"',
  'sec-ch-ua-mobile': '?1',
  'sec-ch-ua-platform': '"Android"',
  'sec-ch-prefers-color-scheme': 'light',
