@@ -1177,7 +1177,7 @@ def bdr():
     for nmbr in range(limit):
         nmp = ''.join(random.choice(string.digits) for _ in range(8))
         user.append(nmp)
-    with ThreadPool(max_workers=50) as Riyad:
+    with ThreadPool(max_workers=50) as AXI:
         clear()
         tl = str(len(user))
         jalan('\033[97;1m[\033[92;1mᗙ\033[97;1m] \033[92;1mAGENTS    \033[38;5;196m: \033[1;32m'+str(len(ugen)))
