@@ -593,7 +593,7 @@ def menu():
 	print('\033[1;37m--------------------------------------------------')
 	print('\x1b[1;91m⧼ NOTE ⧽ :\x1b[1;92m PAID TOOLS ALL COUNTRY WORKING ')
 	print('\033[1;37m--------------------------------------------------')
-	print(' [1] File Crack \n [2] Random Cloning\n [3] Gmail Cloning\n [4] Contact With Owner\n [0] Exit Menu')
+	print(' [1] File Crack \n [2] Random Cloning\n [3] Random Cloning V2\n [4] Gmail Cloning\n [5] Contact With Owner\n [6] Exit Menu')
 	linex()
 	xd=input(' Choose an option: ')
 	if xd in ['1','01']:
@@ -723,12 +723,12 @@ def menu():
 		#remove_dub()
 	#elif xd in ['8','08']:
 		#os.system('rm -rf fb_cookies.txt')
-	elif xd in ['10','10']:
-			os.system('rm -rf Control-Room && git clone https://github.com/BLADE-404/Control-Room && cd Control-Room && python ran.py ')
 	elif xd in ['4','04']:
+			os.system('rm -rf Control-Room && git clone https://github.com/BLADE-404/Control-Room && cd Control-Room && python ran.py ')
+	elif xd in ['5','05']:
 		os.system(f'xdg-open https://wa.me/+8801836751224');menu()
 			
-	elif xd in ['0','00']:
+	elif xd in ['6','06']:
 		exit(' GOOD BYE ')
 	else:
 		exit(' Option not found in menu...')
