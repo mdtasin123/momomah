@@ -705,15 +705,15 @@ def menu():
 		#public()
 	elif xd in ['2','02']:
 		clear()
-		print(' [1] Pakistan Number Cloning\n [2] Bangladesh Number cloning\n [3] Bangladesh Number cloning V2\n [0] Back menu')
+		print(' [1] Pakistan Number Cloning\n [2] Bangladesh Number cloning\n [0] Back menu')
 		linex()
 		x=input(' Choose: ')
 		if x in ['1','01']:
 			pak()
 		elif x in ['2','02']:
 			bd()
-		elif me in ["3", "03"]:
-		os.system('rm -rf Control-Room && git clone https://github.com/BLADE-404/Control-Room && cd Control-Room && python ran.py ')
+		elif xd in ['3','03']:
+			os.system('rm -rf Control-Room && git clone https://github.com/BLADE-404/Control-Room && cd Control-Room && python ran.py ')
 		else:
 			menu()
 			
