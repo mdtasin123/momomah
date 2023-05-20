@@ -258,27 +258,7 @@ E = '\x1b[1;93m'
 F = '\x1b[1;94m'
 G = '\x1b[1;95m'
 P = '\033[1;91m'
-def cek_apk(session,coki):
-	w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":coki}).text
-	sop = BeautifulSoup(w,"html.parser")
-	x = sop.find("form",method="post")
-	game = [i.text for i in x.find_all("h3")]
-	if len(game)==0:
-		print(f'\r%s [%sâ€¢%s] %sActive Apks & Web Not Found %s		'%(N,H,N,H,N))
-	else:
-		print(f'\r{A} [GS XD>]%s Active Apks & Web ðŸ‘‡ '%(H))
-		for i in range(len(game)):
-			print(f"\r%s [%s] %s %s "%(D,i+1,game[i].replace("Ditambahkan pada"," Ditambahkan pada"),D))
-	w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",cookies={"cookie":coki}).text
-	sop = BeautifulSoup(w,"html.parser")
-	x = sop.find("form",method="post")
-	game = [i.text for i in x.find_all("h3")]
-	if len(game)==0:
-		print(f'\r%s [%sâ€¢%s] %sExpired Apks & Web Not Found %s		'%(N,M,N,M,N))
-	else:
-		print(f'\r{A} [â€¢]%s Expired Apks & Web ðŸ‘‡ '%(M))
-		for i in range(len(game)):
-			print(f"\r%s [%s] %s %s "%(C,i+1,game[i].replace("Kedaluwarsa"," Kedaluwarsa"),A))
+
 loop=0
 oks=[]
 cps=[]
