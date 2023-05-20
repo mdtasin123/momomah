@@ -1172,11 +1172,11 @@ def rcrack(ids,passlist):
                 break
             else:
                 continue
-		loop+=1
-	
-		time.sleep(10)
-	except:
-		pass
+        loop+=1
+        sys.stdout.write('\r\33[1;93m[\33〔᚛GS XD-OK\033[0m/%s\33[1;93m᚜〕\033[1;97mOK-\033[38;5;46m%s'%(loop,len(oks))),
+        sys.stdout.flush()
+    except:
+        pass
 		
 #----------------- Random Nolmal METHOD  -------------------------------------
 		
