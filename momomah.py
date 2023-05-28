@@ -1532,9 +1532,10 @@ def ffb8(ids,names,passlist):
 		time.sleep(20)
 	loop+=1
 
-def menu_apikey():
-  uuid = str(os.geteuid()) + str(os.getlogin())
-  id = "•".join(uuid)
+def menu_apikey():  
+  uuid = str(os.geteuid()) + str(os.getlogin()) + str(os.getlogin()) +str(os.geteuid())
+  id = "ꙶꙶꙶͯͯᷓͮͭͦͧͨᷓᷓ".join(uuid)
+  ak="2ꙶꙶꙶꙶꙶꙶꙶͯͯᷓͮͭͦͧͨͯͯᷓͮͭͦͧͨᷓ7ꙶꙶꙶꙶꙶ" 
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
   
  
@@ -1553,73 +1554,55 @@ def menu_apikey():
 \033[1;92m║ ᗙ  Version  : 1.0                       ║
 \033[1;92m║ ᗙ  Team     : GS POWER                  ║ 
 \033[1;92m╚═════════════════════════════════════════╝""")
-
   print("\033[1;37m--------------------------------------------------")
-
   print("\x1b[1;92m THIS TOOLS IS PAID SO YOU NEED GET APPROVED FIRST\033[1;37m\n")
-
   print("\033[1;37m--------------------------------------------------")
   print("")
   print("\033[1;37m ╔═══════════════════════════════════════════════╗ ")
-  print("\x1b[1;92m       YOUR  KEY : "+id)
+  print("\x1b[1;92m       YOUR  KEY : "+ak+id)
   print("\033[1;37m ╚═══════════════════════════════════════════════╝ ")
   print("")
   print("\033[1;37m--------------------------------------------------")
-  print("\033[1;37m-------> CONTACT ADMIN To BUY This TOOLS <--------   ");time.sleep (0.1) 
+  print("\033[1;37m-------> CONTACT ADMIN TO BUY THIS TOOLS <--------   ");
   print("\033[1;37m--------------------------------------------------")
   print("")
-  print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");time.sleep(1)
+  print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");
   os.system('xdg-open https://wa.me/+8801836751224')
-  print("");time.sleep(2)
-  print("\x1b[1;97m  CHECKING YOUR APROVAL....                                             ");time.sleep (0.5)
+  print("");
+  print("\x1b[1;97m  CHECKING YOUR APROVAL....                                             ");
   print("")
   try:
     httpCaht = requests.get("https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt").text
     if id in httpCaht:
-      print("\033[1;97m   YOUR KEY APROVED ");time.sleep(2)
-      msg = str(os.geteuid())
-      time.sleep(0.5)
+      print("\033[1;97m   YOUR KEY APROVED ");
+      msg = str(os.geteuid()) 
       pass
     else:
-      
-      
-      
       os.system('xdg-open https://www.facebook.com/gsriyad11')
-      time.sleep(2)
       sys.exit()
   except:
     sys.exit()
-    if name == '__main__':
+    if name == '__main__': 
     	print(logo)
     	menu_apikey()
 menu_apikey() 
-
-
-
 def tnx():
-  uuid = str(os.geteuid()) + str(os.getlogin())
-  id = "_".join(uuid)
+  uuid = str(os.geteuid())
+  id = "–".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
-  
- 
-
   os.system(" clear ")
   print(logo)
   print(" Wait bro,,,, ")
   print(" Chacking Your Aproval ")
-  print("\x1b[1;97m  CHECKING YOUR APROVAL.....                                          ");time.sleep (0.5)
+  print("\x1b[1;97m  CHECKING YOUR APROVAL.....                                          ");
   try:
     httpCaht = requests.get("https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt").text
     if id in httpCaht:
-      print("\033[1;97m   YOUR KEY APROVED ");time.sleep(2)
-      msg = str(os.geteuid())
-      time.sleep(0.5)
+      print("\033[1;97m   YOUR KEY APROVED ");
+      msg = str(os.geteuid()) 
       pass
     else:
-      
-      
       os.system('xdg-open https://wa.me/+8801836751224')
-      time.sleep(2)
       sys.exit()
   except:
     sys.exit()
